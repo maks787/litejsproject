@@ -1,0 +1,9 @@
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
