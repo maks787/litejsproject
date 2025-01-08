@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+  <title>Simple LiteJS Application</title>
+  <link rel="icon" href="data:image/x-icon,;">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script type="ui">
+  // Internal view `#pub` without a route can be used as a parent for other views
+  %view #pub #
+    h1 Welcome to My Simple LiteJS App
+    hr
+    nav
+      a[href="#home"] Home
+      a[href="#about"] About
+      a[href="#contact"] Contact
+    hr
+    %slot
+    footer
+      hr
+      p This app is powered by LiteJS
+
+  // Public view `home` uses `#pub` as it's parent
+  %view home #pub
+  main
+    h2 Welcome Home!
+    p This is a simple, single-page application that allows you to navigate between different views.
+    p Here, you'll find more about what we do and how to contact us.
+
+  // Public view `about`
+  %view about #pub
+    main
+      h2 About Us
+      p We are a small team passionate about creating simple and efficient web applications.
+      p Our goal is to make web development easy and accessible for everyone.
+
+  // Public view `contact`
+  %view contact #pub
+    main
+      h2 Contact Us
+      p We would love to hear from you. If you have any questions or feedback, please reach out to us!
+      p Email: support@simplelitejs.com
+
+  // Start application
+  %start
+</script>
+
+<!-- LiteJS script -->
+<script src="https://litejs.com/litejs.full.min.js"></script>
+<noscript>This application requires JavaScript</noscript>
+</body>
+</html>
